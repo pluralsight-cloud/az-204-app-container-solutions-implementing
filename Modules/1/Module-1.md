@@ -15,7 +15,7 @@ To follow along in this demo using the Cloud Playground Sandbox, follow these st
 1. In an InPrivate or Incognito window log in to the Azure Sandbox using the provided credentials.
 1. Click the **Deploy to Azure** button. Make sure the link opens in the Sandbox browser tab.
 
-    [![Deploy To Azure](#)
+    [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](#)
 
 1. Select the existing **Subscription** and **Resource Group**.
 1. Provide the `Application Client ID` and `Secret` from the Sandbox details.
@@ -30,7 +30,7 @@ To follow along in this demo using the Cloud Playground Sandbox, follow these st
 1. In an InPrivate or Incognito window log in to the Azure Sandbox using the provided credentials.
 1. Click the **Deploy to Azure** button. Make sure the link opens in the Sandbox browser tab.
 
-    [![Deploy To Azure](#)
+    [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](#)
 
 1. Select the existing **Subscription** and **Resource Group**.
 1. Provide the `Application Client ID` and `Secret` from the Sandbox details.
@@ -45,7 +45,7 @@ To follow along in this demo using the Cloud Playground Sandbox, follow these st
 1. In an InPrivate or Incognito window log in to the Azure Sandbox using the provided credentials.
 1. Click the **Deploy to Azure** button. Make sure the link opens in the Sandbox browser tab.
 
-    [![Deploy To Azure](#)
+    [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](#)
 
 1. Select the existing **Subscription** and **Resource Group**.
 1. Provide the `Application Client ID` and `Secret` from the Sandbox details.
@@ -60,7 +60,7 @@ To follow along in this demo using the Cloud Playground Sandbox, follow these st
 1. In an InPrivate or Incognito window log in to the Azure Sandbox using the provided credentials.
 1. Click the **Deploy to Azure** button. Make sure the link opens in the Sandbox browser tab.
 
-    [![Deploy To Azure](#)
+    [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](#)
 
 1. Select the existing **Subscription** and **Resource Group**.
 1. Provide the `Application Client ID` and `Secret` from the Sandbox details.
