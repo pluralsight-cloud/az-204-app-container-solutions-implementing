@@ -12,13 +12,6 @@
 To follow along in this demo using the Cloud Playground Sandbox, follow these steps:
 
 1. Start an [Azure Sandbox](https://app.pluralsight.com/hands-on/playground/cloud-sandboxes).
-1. In an InPrivate or Incognito window log in to the Azure Sandbox using the provided credentials.
-1. Click the **Deploy to Azure** button. Make sure the link opens in the Sandbox browser tab.
-
-    [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](#)
-
-1. Select the existing **Subscription** and **Resource Group**.
-1. Deploy the template.
 1. Follow-along with the demo.
 
 ## Clip 2: Demo: Deploy Code to an Azure Web App Manually
@@ -29,7 +22,7 @@ To follow along in this demo using the Cloud Playground Sandbox, follow these st
 1. In an InPrivate or Incognito window log in to the Azure Sandbox using the provided credentials.
 1. Click the **Deploy to Azure** button. Make sure the link opens in the Sandbox browser tab.
 
-    [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](#)
+    [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fpluralsight-cloud%2Faz-204-app-container-solutions-implementing%2Frefs%2Fheads%2Fmain%2FModules%2F1%2F1.2%2Fmain.json)
 
 1. Select the existing **Subscription** and **Resource Group**.
 1. Deploy the template.
@@ -43,7 +36,7 @@ To follow along in this demo using the Cloud Playground Sandbox, follow these st
 1. In an InPrivate or Incognito window log in to the Azure Sandbox using the provided credentials.
 1. Click the **Deploy to Azure** button. Make sure the link opens in the Sandbox browser tab.
 
-    [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](#)
+    [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fpluralsight-cloud%2Faz-204-app-container-solutions-implementing%2Frefs%2Fheads%2Fmain%2FModules%2F1%2F1.3%2Fmain.json)
 
 1. Select the existing **Subscription** and **Resource Group**.
 1. Provide the `Application Client ID` and `Secret` from the Sandbox details.
@@ -58,7 +51,7 @@ To follow along in this demo using the Cloud Playground Sandbox, follow these st
 1. In an InPrivate or Incognito window log in to the Azure Sandbox using the provided credentials.
 1. Click the **Deploy to Azure** button. Make sure the link opens in the Sandbox browser tab.
 
-    [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](#)
+    [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fpluralsight-cloud%2Faz-204-app-container-solutions-implementing%2Frefs%2Fheads%2Fmain%2FModules%2F1%2F1.4%2Fmain.json)
 
 1. Select the existing **Subscription** and **Resource Group**.
 1. Provide the `Application Client ID` and `Secret` from the Sandbox details.
