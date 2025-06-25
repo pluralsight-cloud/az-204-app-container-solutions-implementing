@@ -1,0 +1,169 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "bicep",
+      "version": "0.35.1.17967",
+      "templateHash": "3786023627385829510"
+    }
+  },
+  "variables": {
+    "location": "[resourceGroup().location]",
+    "uniqueSuffix": "[uniqueString(resourceGroup().id)]",
+    "sqlServerNameProd": "[format('sql-crf-prod-{0}', variables('uniqueSuffix'))]",
+    "sqlServerNameStaging": "[format('sql-crf-staging-{0}', variables('uniqueSuffix'))]",
+    "sqlAdministratorLogin": "sqlAdmin",
+    "sqlAdministratorLoginPassword": "SuperSecretPassword1234",
+    "databaseName": "carvedrockfitnessdb"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Sql/servers",
+      "apiVersion": "2021-02-01-preview",
+      "name": "[variables('sqlServerNameProd')]",
+      "location": "[variables('location')]",
+      "tags": {
+        "displayName": "Production SQL Server"
+      },
+      "properties": {
+        "administratorLogin": "[variables('sqlAdministratorLogin')]",
+        "administratorLoginPassword": "[variables('sqlAdministratorLoginPassword')]",
+        "version": "12.0"
+      }
+    },
+    {
+      "type": "Microsoft.Sql/servers",
+      "apiVersion": "2021-02-01-preview",
+      "name": "[variables('sqlServerNameStaging')]",
+      "location": "[variables('location')]",
+      "tags": {
+        "displayName": "Staging SQL Server"
+      },
+      "properties": {
+        "administratorLogin": "[variables('sqlAdministratorLogin')]",
+        "administratorLoginPassword": "[variables('sqlAdministratorLoginPassword')]",
+        "version": "12.0"
+      }
+    },
+    {
+      "type": "Microsoft.Sql/servers/firewallRules",
+      "apiVersion": "2022-02-01-preview",
+      "name": "[format('{0}/{1}', variables('sqlServerNameProd'), 'firewallRules')]",
+      "properties": {
+        "endIpAddress": "0.0.0.0",
+        "startIpAddress": "0.0.0.0"
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Sql/servers', variables('sqlServerNameProd'))]"
+      ]
+    },
+    {
+      "type": "Microsoft.Sql/servers/databases",
+      "apiVersion": "2021-02-01-preview",
+      "name": "[format('{0}/{1}', variables('sqlServerNameProd'), variables('databaseName'))]",
+      "location": "[variables('location')]",
+      "tags": {
+        "displayName": "Database"
+      },
+      "sku": {
+        "name": "Basic"
+      },
+      "properties": {
+        "collation": "SQL_Latin1_General_CP1_CI_AS",
+        "maxSizeBytes": 1073741824
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Sql/servers', variables('sqlServerNameProd'))]"
+      ]
+    },
+    {
+      "type": "Microsoft.Sql/servers/firewallRules",
+      "apiVersion": "2022-02-01-preview",
+      "name": "[format('{0}/{1}', variables('sqlServerNameStaging'), 'firewallRules')]",
+      "properties": {
+        "endIpAddress": "0.0.0.0",
+        "startIpAddress": "0.0.0.0"
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Sql/servers', variables('sqlServerNameStaging'))]"
+      ]
+    },
+    {
+      "type": "Microsoft.Sql/servers/databases",
+      "apiVersion": "2021-02-01-preview",
+      "name": "[format('{0}/{1}', variables('sqlServerNameStaging'), variables('databaseName'))]",
+      "location": "[variables('location')]",
+      "tags": {
+        "displayName": "Database"
+      },
+      "sku": {
+        "name": "Basic"
+      },
+      "properties": {
+        "collation": "SQL_Latin1_General_CP1_CI_AS",
+        "maxSizeBytes": 1073741824
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Sql/servers', variables('sqlServerNameStaging'))]"
+      ]
+    },
+    {
+      "type": "Microsoft.Web/serverfarms",
+      "apiVersion": "2020-12-01",
+      "name": "asp-carvedrockfitness-windows",
+      "location": "[variables('location')]",
+      "sku": {
+        "name": "S1",
+        "tier": "Standard"
+      },
+      "properties": {
+        "reserved": false
+      }
+    },
+    {
+      "type": "Microsoft.Web/sites",
+      "apiVersion": "2022-03-01",
+      "name": "[format('app-carvedrockfitness-windows-{0}', variables('uniqueSuffix'))]",
+      "location": "[variables('location')]",
+      "properties": {
+        "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', 'asp-carvedrockfitness-windows')]"
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Web/serverfarms', 'asp-carvedrockfitness-windows')]"
+      ]
+    },
+    {
+      "type": "Microsoft.Web/sites/sourcecontrols",
+      "apiVersion": "2021-01-01",
+      "name": "[format('{0}/{1}', format('app-carvedrockfitness-windows-{0}', variables('uniqueSuffix')), 'web')]",
+      "properties": {
+        "repoUrl": "https://github.com/WayneHoggett-ACG/CarvedRockFitness",
+        "branch": "main",
+        "isManualIntegration": true
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Web/sites', format('app-carvedrockfitness-windows-{0}', variables('uniqueSuffix')))]"
+      ]
+    },
+    {
+      "type": "Microsoft.Web/sites/config",
+      "apiVersion": "2022-03-01",
+      "name": "[format('{0}/{1}', format('app-carvedrockfitness-windows-{0}', variables('uniqueSuffix')), 'web')]",
+      "properties": {
+        "connectionStrings": [
+          {
+            "name": "DefaultConnection",
+            "connectionString": "[format('Server={0}.database.windows.net;Database={1};User Id={2};Password={3};', variables('sqlServerNameProd'), variables('databaseName'), variables('sqlAdministratorLogin'), variables('sqlAdministratorLoginPassword'))]",
+            "type": "SQLAzure"
+          }
+        ],
+        "netFrameworkVersion": "v8.0",
+        "webSocketsEnabled": true
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Web/sites', format('app-carvedrockfitness-windows-{0}', variables('uniqueSuffix')))]"
+      ]
+    }
+  ]
+}

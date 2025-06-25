@@ -1,0 +1,129 @@
+var location  = resourceGroup().location
+var uniqueSuffix = uniqueString(resourceGroup().id)
+var sqlServerNameProd  = 'sql-crf-prod-${uniqueSuffix}'
+var sqlServerNameStaging  = 'sql-crf-staging-${uniqueSuffix}'
+var sqlAdministratorLogin = 'sqlAdmin'
+var sqlAdministratorLoginPassword  = 'SuperSecretPassword1234'
+var databaseName = 'carvedrockfitnessdb'
+
+resource sqlServerProd 'Microsoft.Sql/servers@2021-02-01-preview' = {
+  name: sqlServerNameProd
+  location: location
+  tags: {
+    displayName: 'Production SQL Server'
+  }
+  properties: {
+    administratorLogin: sqlAdministratorLogin
+    administratorLoginPassword: sqlAdministratorLoginPassword
+    version: '12.0'
+  }
+}
+
+resource sqlServerStaging 'Microsoft.Sql/servers@2021-02-01-preview' = {
+  name: sqlServerNameStaging
+  location: location
+  tags: {
+    displayName: 'Staging SQL Server'
+  }
+  properties: {
+    administratorLogin: sqlAdministratorLogin
+    administratorLoginPassword: sqlAdministratorLoginPassword
+    version: '12.0'
+  }
+}
+
+resource firewallRulesProd 'Microsoft.Sql/servers/firewallRules@2022-02-01-preview' = {
+  parent: sqlServerProd
+  name: 'firewallRules'
+  properties: {
+    endIpAddress: '0.0.0.0'
+    startIpAddress: '0.0.0.0'
+  }
+}
+
+resource sqlDatabaseProd 'Microsoft.Sql/servers/databases@2021-02-01-preview' = {
+  parent: sqlServerProd
+  name: databaseName
+  location: location
+  tags: {
+    displayName: 'Database'
+  }
+  sku: {
+    name: 'Basic'
+  }
+  properties: {
+    collation: 'SQL_Latin1_General_CP1_CI_AS'
+    maxSizeBytes: 1073741824
+  }
+}
+
+resource firewallRulesStaging 'Microsoft.Sql/servers/firewallRules@2022-02-01-preview' = {
+  parent: sqlServerStaging
+  name: 'firewallRules'
+  properties: {
+    endIpAddress: '0.0.0.0'
+    startIpAddress: '0.0.0.0'
+  }
+}
+
+resource sqlDatabase 'Microsoft.Sql/servers/databases@2021-02-01-preview' = {
+  parent: sqlServerStaging
+  name: databaseName
+  location: location
+  tags: {
+    displayName: 'Database'
+  }
+  sku: {
+    name: 'Basic'
+  }
+  properties: {
+    collation: 'SQL_Latin1_General_CP1_CI_AS'
+    maxSizeBytes: 1073741824
+  }
+}
+
+resource appServicePlanWindows 'Microsoft.Web/serverfarms@2020-12-01' = {
+  name: 'asp-carvedrockfitness-windows'
+  location: location
+  sku: {
+    name: 'S1'
+    tier: 'Standard'
+  }
+  properties: {
+    reserved: false
+  }
+}
+
+resource windowsWebApplication 'Microsoft.Web/sites@2022-03-01' = {
+  name: 'app-carvedrockfitness-windows-${uniqueSuffix}'
+  location: location
+  properties: {
+    serverFarmId: appServicePlanWindows.id
+  }
+}
+
+resource srcControls 'Microsoft.Web/sites/sourcecontrols@2021-01-01' =  {
+  parent: windowsWebApplication
+  name: 'web'
+  properties: {
+    repoUrl: 'https://github.com/WayneHoggett-ACG/CarvedRockFitness'
+    branch: 'main'
+    isManualIntegration: true
+  }
+}
+
+resource config 'Microsoft.Web/sites/config@2022-03-01' = {
+  parent: windowsWebApplication
+  name: 'web'
+  properties: {
+    connectionStrings: [
+      {
+        name: 'DefaultConnection'
+        connectionString: 'Server=${sqlServerNameProd}.database.windows.net;Database=${databaseName};User Id=${sqlAdministratorLogin};Password=${sqlAdministratorLoginPassword};'
+        type: 'SQLAzure'
+      }
+    ]
+    netFrameworkVersion: 'v8.0'
+    webSocketsEnabled: true
+  }
+}

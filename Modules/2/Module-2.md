@@ -38,7 +38,6 @@ To follow along in this demo using the Cloud Playground Sandbox, follow these st
 
 ## Clip 3: Demo: Deploy Code to Azure App Service Automatically
 
-
 1. To follow along with this demonstration you will need your own subscription.
 1. Log in to the Azure Portal.
 1. Open **Cloud Shell** using **Bash** and set the subscription you'd like to use:
