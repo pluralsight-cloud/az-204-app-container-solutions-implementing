@@ -16,7 +16,7 @@ To follow along in this demo using the Cloud Playground Sandbox, follow these st
 1. In an InPrivate or Incognito window log in to the Azure Sandbox using the provided credentials.
 1. Click the **Deploy to Azure** button. Make sure the link opens in the Sandbox browser tab.
 
-    [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/)
+    [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fpluralsight-cloud%2Faz-204-app-container-solutions-implementing%2Frefs%2Fheads%2Fmain%2FModules%2F3%2F3.1%2Fmain.json)
 
 1. Select the existing **Subscription** and **Resource Group**.
 1. Deploy the template.
@@ -30,7 +30,7 @@ To follow along in this demo using the Cloud Playground Sandbox, follow these st
 1. In an InPrivate or Incognito window log in to the Azure Sandbox using the provided credentials.
 1. Click the **Deploy to Azure** button. Make sure the link opens in the Sandbox browser tab.
 
-    [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/)
+    [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fpluralsight-cloud%2Faz-204-app-container-solutions-implementing%2Frefs%2Fheads%2Fmain%2FModules%2F3%2F3.2%2Fmain.json)
 
 1. Select the existing **Subscription** and **Resource Group**.
 1. Deploy the template.
@@ -44,7 +44,7 @@ To follow along in this demo using the Cloud Playground Sandbox, follow these st
 1. In an InPrivate or Incognito window log in to the Azure Sandbox using the provided credentials.
 1. Click the **Deploy to Azure** button. Make sure the link opens in the Sandbox browser tab.
 
-    [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/)
+    [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fpluralsight-cloud%2Faz-204-app-container-solutions-implementing%2Frefs%2Fheads%2Fmain%2FModules%2F3%2F3.3%2Fmain.json)
 
 1. Select the existing **Subscription** and **Resource Group**.
 1. Deploy the template.
@@ -58,7 +58,7 @@ To follow along in this demo using the Cloud Playground Sandbox, follow these st
 1. In an InPrivate or Incognito window log in to the Azure Sandbox using the provided credentials.
 1. Click the **Deploy to Azure** button. Make sure the link opens in the Sandbox browser tab.
 
-    [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/)
+    [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fpluralsight-cloud%2Faz-204-app-container-solutions-implementing%2Frefs%2Fheads%2Fmain%2FModules%2F3%2F3.4%2Fmain.json)
 
 1. Select the existing **Subscription** and **Resource Group**.
 1. Deploy the template.
@@ -86,7 +86,7 @@ To follow along in this demo using the Cloud Playground Sandbox, follow these st
 
 1. Click the **Deploy to Azure** button. Make sure the link opens in the same browser tab as the Azure Portal.
 
-    [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/)
+    [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fpluralsight-cloud%2Faz-204-app-container-solutions-implementing%2Frefs%2Fheads%2Fmain%2FModules%2F3%2F3.5%2Fmain.json)
 
 1. Select your preferred **Subscription** and **Resource Group**.
 1. Deploy the template.
