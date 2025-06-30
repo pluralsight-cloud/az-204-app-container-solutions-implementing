@@ -1,4 +1,4 @@
-# Module 3: Managing Azure Web App Deployments 
+# Module 4: Managing Azure Web App Deployments
 
 ## Table of Contents
 
