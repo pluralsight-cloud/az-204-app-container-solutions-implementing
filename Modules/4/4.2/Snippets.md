@@ -1,0 +1,5 @@
+# Snippets
+
+```C#
+<SitewideSale />
+```

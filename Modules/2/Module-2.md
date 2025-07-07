@@ -1,5 +1,12 @@
 # Module 2: Scaling App Service Web Apps
 
+## References
+
+- [Scale up an Azure App Service plan](https://learn.microsoft.com/en-us/azure/app-service/manage-scale-up)
+- [Get started with autoscale in Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-get-started?toc=%2Fazure%2Fapp-service%2Ftoc.json)
+- [Understanding autoscale settings in Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-understanding-settings)
+- [Get started with autoscale in Azure Monitor (duplicate)](https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-get-started?toc=%2Fazure%2Fapp-service%2Ftoc.json)
+
 ## Table of Contents
 
 1. [Clip 1: Demo: Scale Up an Azure Web App Service Plan](#clip-1-demo-scale-up-an-azure-web-app-service-plan)
@@ -21,6 +28,8 @@ To follow along in this demo using the Cloud Playground Sandbox, follow these st
 1. Deploy the template.
 1. Follow-along with the demo.
 
+[Check here for snippets](2.1/Snippets.md) used in the demo.
+
 ## Clip 2: Demo: Scale Azure Web Apps using Azure Autoscale
 
 To follow along in this demo using the Cloud Playground Sandbox, follow these steps:
@@ -35,6 +44,8 @@ To follow along in this demo using the Cloud Playground Sandbox, follow these st
 1. Provide the `Application Client ID` and `Secret` from the Sandbox details.
 1. Deploy the template.
 1. Follow-along with the demo.
+
+[Check here for snippets](2.2/Snippets.md) used in the demo.
 
 ## Clip 3: Demo: Deploy Code to Azure App Service Automatically
 
@@ -63,3 +74,5 @@ To follow along in this demo using the Cloud Playground Sandbox, follow these st
 1. Select your preferred **Subscription** and **Resource Group**.
 1. Deploy the template.
 1. Follow-along with the demo.
+
+[Check here for snippets](3.1/Snippets.md) used in the demo.

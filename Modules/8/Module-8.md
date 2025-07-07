@@ -1,5 +1,10 @@
 # Module 8: Develop and Deploy Azure Functions
 
+## References
+
+- [Azure Functions Timer Bindings (C#)](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-timer?tabs=python-v2%2Cisolated-process%2Cnodejs-v4&pivots=programming-language-csharp)
+- [Create your first Azure Function using VS Code (C#)](https://learn.microsoft.com/en-us/azure/azure-functions/create-first-function-vs-code-csharp)
+
 ## Table of Contents
 
 1. [Clip 1: Demo: Create an Azure Function App Project](#clip-1-demo-create-an-azure-function-app-project)
@@ -19,6 +24,10 @@ To follow along in this demo using the Cloud Playground Sandbox, follow these st
 1. Deploy the template.
 1. Follow-along with the demo.
 
+[Check here for snippets](8.1/Snippets.md) used in the demo.
+
 ## Clip 2: Demo: Deploy and Configure Azure Functions
 
 To follow along in this demo, follow-along with the first demo in this module and then continue with this demo using the same environment.
+
+[Check here for snippets](8.2/Snippets.md) used in the demo.

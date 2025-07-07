@@ -1,5 +1,11 @@
 # Module 3: Configuring Azure Web Apps
 
+## References
+
+- [Azure App Service Local Cache Overview](http://learn.microsoft.com/en-gb/azure/app-service/overview-local-cache)
+- [Troubleshoot Diagnostic Logs in Azure App Service](https://learn.microsoft.com/en-us/azure/app-service/troubleshoot-diagnostic-logs)
+- [Enable Diagnostic Logging in Azure Web Apps](https://learn.microsoft.com/en-us/training/modules/configure-web-app-settings/5-enable-diagnostic-logging?ns-enrollment-type=learningpath&ns-enrollment-id=learn.wwl.create-azure-app-service-web-apps)
+
 ## Table of Contents
 
 1. [Clip 1: Demo: Configure Azure Web App Service Settings and Connection Strings](#clip-1-demo-configure-azure-web-app-service-settings-and-connection-strings)
@@ -21,6 +27,8 @@ To follow along in this demo using the Cloud Playground Sandbox, follow these st
 1. Select the existing **Subscription** and **Resource Group**.
 1. Deploy the template.
 1. Follow-along with the demo.
+
+[Check here for snippets](3.1/Snippets.md) used in the demo.
 
 ## Clip 2: Demo: Configure Azure Web App Settings
 
@@ -49,6 +57,8 @@ To follow along in this demo using the Cloud Playground Sandbox, follow these st
 1. Select the existing **Subscription** and **Resource Group**.
 1. Deploy the template.
 1. Follow-along with the demo.
+
+[Check here for snippets](3.3/Snippets.md) used in the demo.
 
 ## Clip 4: Demo: Manage Azure Web App Certificates
 
@@ -91,3 +101,5 @@ To follow along in this demo using the Cloud Playground Sandbox, follow these st
 1. Select your preferred **Subscription** and **Resource Group**.
 1. Deploy the template.
 1. Follow-along with the demo.
+
+[Check here for snippets](3.5/Snippets.md) used in the demo.

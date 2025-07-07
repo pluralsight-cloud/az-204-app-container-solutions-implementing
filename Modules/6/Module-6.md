@@ -1,5 +1,10 @@
 # Module 6: Deploying to Azure Container Instances
 
+## References
+
+- [Deploy an app to Azure Container Instances](https://learn.microsoft.com/en-us/azure/container-instances/container-instances-tutorial-deploy-app)
+- [Use Azure Files with Azure Container Instances](https://learn.microsoft.com/en-us/azure/container-instances/container-instances-volume-azure-files)
+
 ## Table of Contents
 
 1. [Clip 1: Demo: Deploy Azure Container Instances Using the Azure CLI](#clip-1-demo-deploy-azure-container-instances-using-the-azure-cli)
@@ -19,6 +24,8 @@ To follow along in this demo using the Cloud Playground Sandbox, follow these st
 1. Deploy the template.
 1. Follow-along with the demo.
 
+[Check here for snippets](6.1/Snippets.md) used in the demo.
+
 ## Clip 2: Demo: Use Azure Files with Azure Container Instances
 
 To follow along in this demo using the Cloud Playground Sandbox, follow these steps:
@@ -32,3 +39,5 @@ To follow along in this demo using the Cloud Playground Sandbox, follow these st
 1. Select the existing **Subscription** and **Resource Group**.
 1. Deploy the template.
 1. Follow-along with the demo.
+
+[Check here for snippets](6.2/Snippets.md) used in the demo.
